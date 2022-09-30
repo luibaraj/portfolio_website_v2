@@ -1,13 +1,395 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+	overflow-x: hidden;
+}
+
+/* HEADER */
+nav {
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 1.7rem;
+	padding-bottom: 1.7rem;
+	transition: .5s;
+}
+
+nav #links a {
+	text-decoration: none;
+	padding: 6.5rem;
+	font-size: 1.5rem;
+	font-family: monospace;
+	color: black;
+	transition: .5s;
+}
+
+#toggle {
+	position: relative;
+	display: block;
+	width: 4rem;
+	height: 2rem;
+	border-radius: 2rem;
+	background: rgb(101, 101, 101);
+	transition: .5s;
+	cursor: pointer;
+}
+
+#toggle .indicator {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2rem;
+	height: 2rem;
+	background: linear-gradient(to bottom, #444, #222);
+	border-radius: 50%;
+	transition: .5s;
+	transform: scale(.9);
+
+}
+
+/* Header - DARKMODE */
+#toggle.active .indicator {
+	left: 2rem;
+	background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+}
+
+nav.active {
+	background-color: black;
+}
+
+nav #links.active a {
+	color: white;
+}
+
+/* About/Intro */
+
+#Intro  {
+	display: flex;
+    position: relative;
+	justify-content: center;
+	background-color: #00234A;
+	color: white;
+	padding-top: 6rem;
+	transition: .5s;
+}
+
+.white {
+	color: white;
+}
+
+#Intro .title {
+	margin-right: 2.5rem;
+}
+
+#Intro  .title h1 {
+    font-size: 5rem;
+}
+
+#Intro  .title h2 {
+    font-size: 3rem;
+}
+
+#Intro  .about-me {
+    position: relative;
+    bottom: 3rem;
+	margin-left: 2.5rem;
+
+}
+
+#Intro  .about-me .title,
+#Intro  .about-me p {
+	text-align: center;
+}
+
+#Intro  .about-me p{
+	font-size: 1.5rem;
+}
+
+#Intro .about-me .title {
+	font-size: 2.5rem;
+}
+
+#Intro .title h2 {
+	color: #68a8f2;
+}
+
+/* About/Intro - Dark mode */
+
+#Intro.active {
+	background-color: #00162e;
+}
+
+/* Project */
+#Proj {
+  background-color: #394551;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  transition: .5s;
+}
+
+#Proj h2 {
+  font-size: 3rem;
+  padding-bottom: .5rem;
+}
+
+.Project {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  transition: .5s;
+}
+
+
+.p1 {
+  font-size: 2.2rem;
+}
+
+.p2,
+.p3 {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}
+
+.p2 {
+  width: 50rem;
+}
+
+.p1 span,
+.p2 span,
+.p3 span {
+  color: #0077ff;
+}
+
+.p2 span,
+.p3 span{
+  font-size: 1.6rem;
+}
+
+.buttons {
+  display: flex;
+  padding-top: .5rem;
+}
+
+.buttons button {
+  width: 3rem;
+  height: auto;
+}
+
+/* Project - Dark mode */
+
+#Proj .Proj-container.active .Project {
+	color: white;
+	background-color: black;
+	box-shadow: 0 4px 8px 0 rgb(0 0 0), 0 6px 20px 0 rgb(118 118 118);
+}
+
+#Proj.active {
+	background-color: #13161a;
+}
+
+#Proj .Proj-container.active .Project .text .p3 a {
+	color: #8abffb;
+}
+
+/* Skills */
+#Skills {
+	display: flex;
+	align-items: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+	flex-direction: column;
+	transition: .5s;
+}
+
+#Skills h2 {
+	font-size: 3rem;
+	transition: .5s;
+}
+
+#Skills .Card-container {
+	margin-top: 1.5rem;
+	margin-top: 1.5rem;
+    display: flex;
+    /* justify-content: space-evenly; */
+}
+
+#Skills .Card-container .Card {
+    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+	transition: .5s;
+}
+
+#Skills .Card-container .Card .Skills-img img {
+	max-width: 100%;
+	max-height: 100%;
+}
+#Skills .Card-container .Card .Skills-img {
+    width: 15rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+#Skills .Card-container .Card .Skills-text p {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: .5rem;
+	transition: .5s;
+	align-self: flex-end;
+}
+
+#Skills .Card-container.pair,
+#Skills .Card-container.single {
+	display: none;
+}
+
+/* Skills - Dark mode */
+#Skills.active {
+	background-color: #1e2c3e;
+}
+
+#Skills.active h2 {
+	color: white;
+}
+
+#Skills.active .Card-container .Card {
+	background-color: #394551;
+}
+
+#Skills.active .Card-container .Card .Skills-text p {
+	color: white;
+}
+
+/* Contact/footer */
+#Contact {
+	padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+	flex-direction: column;
+	align-items: center;
+	transition: .5s;
+	display: flex;
+	color: white;
+	background-color: #394551;
+}
+
+#Contact h2 {
+	font-size: 2rem;
+}
+
+#Contact p {
+	font-size: 1.3rem;
+}
+
+/* Contact/footer - darkmode */
+#Contact.active {
+	background-color: #13161a;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+/* Less than 1459px */
+
+@media only screen and (max-width: 1459px) {
+	#Intro .title {
+		margin-right: 1rem;
+	}
+
+	#Intro .about-me {
+		margin-left: 1rem;
+	}
+
+}
+
+/* Less than 1406 */
+
+@media only screen and (max-width: 1406px) {
+	#Intro {
+		flex-direction: column;
+		padding-top: 1rem;
+    	padding-bottom: 1rem;
+	}
+
+	#Intro .about-me {
+		bottom: 0;
+		padding-top: 3.5rem;
+	}
+
+	#Intro .title h1,
+	#Intro .title h2 {
+		text-align: center;
+	}
+}
+
+/* Less than 1333px */
+
+
+@media only screen and (max-width: 1000px) {
+
+	nav #links a {
+		padding: 6.5rem 1.5rem 6.5rem 1.5rem;
+	}
+
+	#Skills .Card-container .Card {
+		margin-left: 1rem;
+		margin-right : 1rem;
+	}
+}
+
+/* Less than 923 */
+
+@media only screen and (max-width: 923px) {
+	#Skills .Card-container {
+		display: none;
+	}
+
+	#Skills .Card-container.pair {
+		display: flex;
+	}
+}
+
+/* Less than 624px */
+
+@media only screen and (max-width: 624px) {
+	#Skills .Card-container.pair {
+		display: none;
+	}
+
+	#Skills .Card-container.single {
+		display: flex;
+	}
+}
+
+/* Less than 530px */
+
+@media only screen and (max-width: 530px) {
+
+	nav {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	nav #links {
+		display: flex;
+		flex-direction: column;
+	}
+
+	nav #links a {
+		padding: .5rem 0 .5rem 0;
+	}
+
+	#Intro .title h2 {
+		font-size: 2.7rem;
+	}
 }
